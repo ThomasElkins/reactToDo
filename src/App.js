@@ -16,7 +16,7 @@ class App extends Component {
           <input type="text" name="newToDo"></input>
           <button type="submit">Submit</button>
         </form>
-        {this.props.data.map((todo, i) => <li key={i}>
+        {this.props.data.map((todo, i) => <li key={i} onClick={e => this.props.markAsComplete(todo.id)} className={todo.completed ? "completed" : "incomplete"}>
           {todo.todo}
       </li>)}</div>
     );
@@ -32,6 +32,10 @@ const mapDispatchToProps = (dispatch) => {
     addToDo: (todo) => dispatch({
       type: 'ADD_TODO',
       todo
+    }),
+    markAsComplete: (id) => dispatch({
+      type: 'MARK_AS_COMPLETE',
+      id
     })
   }
 }

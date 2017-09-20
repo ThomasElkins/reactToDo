@@ -10,3 +10,10 @@ export default addTodo = (todo) => {
     todo
   }
 }
+
+export default markAsComplete = (id => {
+  return {
+    type: "MARK_AS_COMPLETE",
+    id
+  }
+}
