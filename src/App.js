@@ -11,6 +11,7 @@ class App extends Component {
       <div>
         <form onSubmit={e => {
             this.props.addToDo(e.target.newToDo.value)
+            e.target.newToDo.value = ""
             e.preventDefault()
           }}>
           <input type="text" name="newToDo"></input>
